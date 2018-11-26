@@ -36,6 +36,9 @@
         <activity
             android:name=".CoachActivity"
             android:label="Coachlist"/>
+        <activity
+            android:name=".VideoViewActivity"
+            android:label="Play"/>
     </application>
 
 </manifest>

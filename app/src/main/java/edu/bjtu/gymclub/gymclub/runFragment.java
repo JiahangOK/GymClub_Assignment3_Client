@@ -117,21 +117,12 @@ public class runFragment extends Fragment {
 
         try {
             jsonObject = new JSONObject(jsoninfo);
-            JSONArray data = jsonObject.getJSONArray("info");
+            JSONArray data = jsonObject.getJSONArray("trainer_info");
             for (int i = 0; i < data.length(); i++) {
                 JSONObject jsonObject1 = data.getJSONObject(i);
                 trainer_image = jsonObject1.getString("trainer_image_url");
                 trainer_name = jsonObject1.getString("trainer_name");
                 trainer_intro = jsonObject1.getString("trainer_intro");
-//                //字符串转化为图片
-//                Bitmap bitmap = null;
-//                try {
-//                    byte[] bitmapArray;
-//                    bitmapArray = Base64.decode(trainer_image_string, Base64.DEFAULT);
-//                    bitmap = BitmapFactory.decodeByteArray(bitmapArray, 0, bitmapArray.length);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
                 //添加教练
                 trainerList.add(new Trainer(trainer_name, trainer_image,trainer_intro));
             }
@@ -147,8 +138,6 @@ public class runFragment extends Fragment {
     private void setView() {
         mViewPaper = (ViewPager) mView.findViewById(R.id.vp);
 
-//        //Picasso加载图片
-//        Picasso.with(mainInterfaceActivity).load(bitmap).into(iv_img);
 
         //显示的图片
         images = new ArrayList<ImageView>();

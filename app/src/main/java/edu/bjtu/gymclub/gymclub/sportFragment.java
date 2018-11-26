@@ -97,7 +97,7 @@ public class sportFragment extends Fragment {
                     f=new runFragment(jsoninfo);
                     break;
                 case 1:
-                    f=new walkFragment();
+                    f=new walkFragment(jsoninfo);
                     break;
                 case 2:
                     f=new rideFragment();

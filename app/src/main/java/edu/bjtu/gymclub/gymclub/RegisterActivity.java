@@ -27,6 +27,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class RegisterActivity extends AppCompatActivity {
+    String HOST = "192.168.6.117";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -70,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-                String url = "http://10.0.2.2:8080/register";
+                String url = "http://"+HOST+":8080/register";
 
                 if(!checkEmail(userEmail)||!checkPhoneNumber(userPhoneNumber)||!checkUserName(userName)
                         ||!checkPasswords(userPassword,userPasswordConfirm)){

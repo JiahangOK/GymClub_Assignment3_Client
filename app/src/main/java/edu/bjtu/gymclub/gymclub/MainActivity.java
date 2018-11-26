@@ -30,6 +30,7 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     Dialog dialog;
+    String HOST = "192.168.6.117";
 
     @SuppressLint("NewApi")
     @Override
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String username = userNameEdit.getText().toString();
                 String password = userPasswordEdit.getText().toString();
-                String url = "http://10.0.2.2:8080/user";
+                String url = "http://"+HOST+":8080/user";
                 getCheckFromServer(url, username, password);
                 StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);

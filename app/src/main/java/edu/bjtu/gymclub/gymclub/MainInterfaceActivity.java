@@ -35,6 +35,7 @@ import java.util.ArrayList;
 import static android.support.v4.view.GravityCompat.START;
 
 public class MainInterfaceActivity extends AppCompatActivity {
+
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ArrayList<String> menuLists;
