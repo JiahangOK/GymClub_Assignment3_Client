@@ -19,6 +19,7 @@ import android.widget.Toast;
 import java.io.IOException;
 
 
+import edu.bjtu.gymclub.gymclub.Entity.Config;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -27,7 +28,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class RegisterActivity extends AppCompatActivity {
-    String HOST = "192.168.6.117";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-                String url = "http://"+HOST+":8080/register";
+                String url = "http://"+ Config.HOST+":8080/register";
 
                 if(!checkEmail(userEmail)||!checkPhoneNumber(userPhoneNumber)||!checkUserName(userName)
                         ||!checkPasswords(userPassword,userPasswordConfirm)){
