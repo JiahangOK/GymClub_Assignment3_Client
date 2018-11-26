@@ -50,11 +50,25 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textIsSelectable">false</item>
     </style>
+
     <style name="baseCardTextStyle2" parent="baseLayoutParam">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_toLeftOf">@id/card_share_overflow</item>
         <item name="android:layout_toRightOf">@id/item_tv_img</item>
         <item name="android:layout_below">@id/trainer_name</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
+
+    <style name="baseCardTextStyle3" parent="baseLayoutParam">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_toLeftOf">@id/card_share_overflow</item>
+        <item name="android:layout_toRightOf">@id/trainer_image</item>
+        <item name="android:layout_below">@id/trainer_intro</item>
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingTop">4dp</item>
         <item name="android:paddingRight">15dp</item>

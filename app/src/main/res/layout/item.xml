@@ -27,8 +27,24 @@
             style="@style/cardQuestionTitleStyle" />
 
         <TextView
-        android:id="@+id/trainer_intro"
-        style="@style/baseCardTextStyle"/>
+            android:id="@+id/trainer_intro"
+            style="@style/baseCardTextStyle" />
+        <TextView
+            android:id="@+id/trainer_tel"
+            style="@style/baseCardTextStyle3"/>
+
+        <Button
+            android:id="@+id/trainer_call_button"
+            android:background="@drawable/btn_nor_down"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="Call"
+            android:layout_below="@id/trainer_tel"
+            android:layout_alignParentRight="true"
+
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            />
     </RelativeLayout>
 
 

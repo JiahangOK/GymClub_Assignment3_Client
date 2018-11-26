@@ -6,11 +6,22 @@ public class Trainer {
     private String trainer_name;
     private String trainer_image;
     private String trainer_intro;
+    private String trainer_tel;
 
-    public Trainer(String trainer_name, String trainer_image,String trainer_intro){
+
+    public Trainer(String trainer_name, String trainer_image,String trainer_intro,String trainer_tel){
         this.trainer_name = trainer_name;
         this.trainer_image = trainer_image;
         this.trainer_intro = trainer_intro;
+        this.trainer_tel = trainer_tel;
+    }
+
+    public void setTrainer_tel(String trainer_tel) {
+        this.trainer_tel = trainer_tel;
+    }
+
+    public String getTrainer_tel() {
+        return trainer_tel;
     }
 
     public void setTrainer_name(String trainer_name) {

@@ -1,12 +1,15 @@
 package edu.bjtu.gymclub.gymclub.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +38,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView trainer_photo;
         TextView trainer_name;
         TextView trainer_intro;
+        TextView trainer_tel;
+        Button call_button;
+
 
         public TrainerViewHolder(final View itemView) {
             super(itemView);
@@ -42,7 +48,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             trainer_photo= (ImageView) itemView.findViewById(R.id.trainer_image);
             trainer_name= (TextView) itemView.findViewById(R.id.trainer_name);
             trainer_intro = (TextView) itemView.findViewById(R.id.trainer_intro);
-
+            trainer_tel = (TextView) itemView.findViewById(R.id.trainer_tel);
+            call_button = (Button) itemView.findViewById(R.id.trainer_call_button);
+            call_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + trainer_tel.getText().toString().split(":")[1]));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
 //            //设置TextView背景为半透明
 //            trainer_name.setBackgroundColor(Color.argb(20, 0, 0, 0));
 
@@ -69,6 +84,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         personViewHolder.trainer_name.setText(trainerList.get(i).getTrainer_name());
         personViewHolder.trainer_intro.setText(trainerList.get(i).getTrainer_intro());
+        personViewHolder.trainer_tel.setText("Tel:"+trainerList.get(i).getTrainer_tel());
     }
 
     @Override
