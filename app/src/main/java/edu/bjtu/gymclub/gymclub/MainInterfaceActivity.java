@@ -1,5 +1,6 @@
 package edu.bjtu.gymclub.gymclub;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,6 +20,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,6 +56,7 @@ public class MainInterfaceActivity extends AppCompatActivity {
         String jsoninfo = intent.getStringExtra("jsoninfo");
         initView(jsoninfo);
     }
+
 
 
     private void initView(final String jsoninfo){
@@ -142,7 +145,10 @@ public class MainInterfaceActivity extends AppCompatActivity {
                         intent = new Intent(MainInterfaceActivity.this,CoachActivity.class);
                         startActivity(intent);
                         break;
-
+                    case R.id.nav_findus:
+                        intent = new Intent(MainInterfaceActivity.this,FindUsActivity.class);
+                        startActivity(intent);
+                        break;
                     case R.id.nav_share:
                         break;
                     case R.id.nav_send:

@@ -24,27 +24,30 @@
 
         <TextView
             android:id="@+id/trainer_name"
-            style="@style/cardQuestionTitleStyle" />
+
+            style="@style/cardQuestionTitleStyle"
+            android:clickable="true" />
 
         <TextView
             android:id="@+id/trainer_intro"
-            style="@style/baseCardTextStyle" />
+            style="@style/baseCardTextStyle"
+            android:clickable="true" />
         <TextView
             android:id="@+id/trainer_tel"
-            style="@style/baseCardTextStyle3"/>
+            style="@style/baseCardTextStyle3"
+            android:textColor="@drawable/textview_selector"
+            android:autoLink="all"
+            android:clickable="true" />
 
-        <Button
-            android:id="@+id/trainer_call_button"
-            android:background="@drawable/btn_nor_down"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="Call"
-            android:layout_below="@id/trainer_tel"
-            android:layout_alignParentRight="true"
+        <TextView
+            android:id="@+id/trainer_email"
+            style="@style/baseCardTextStyle4"
+            android:textColor="@drawable/textview_selector"
+            android:autoLink="all"
+            android:clickable="true" />
 
-            android:textAllCaps="false"
-            android:textColor="#ffffff"
-            />
+
+
     </RelativeLayout>
 
 

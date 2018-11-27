@@ -39,7 +39,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView trainer_name;
         TextView trainer_intro;
         TextView trainer_tel;
-        Button call_button;
+        TextView trainer_email;
+
+
 
 
         public TrainerViewHolder(final View itemView) {
@@ -49,8 +51,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             trainer_name= (TextView) itemView.findViewById(R.id.trainer_name);
             trainer_intro = (TextView) itemView.findViewById(R.id.trainer_intro);
             trainer_tel = (TextView) itemView.findViewById(R.id.trainer_tel);
-            call_button = (Button) itemView.findViewById(R.id.trainer_call_button);
-            call_button.setOnClickListener(new View.OnClickListener() {
+            trainer_email = (TextView) itemView.findViewById(R.id.trainer_email);
+
+            trainer_tel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + trainer_tel.getText().toString().split(":")[1]));
@@ -58,6 +61,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     itemView.getContext().startActivity(intent);
                 }
             });
+
+            trainer_email.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent data=new Intent(Intent.ACTION_SENDTO);
+                    data.setData(Uri.parse("mailto:"+trainer_email.getText().toString().split(":")[1]));
+                    itemView.getContext().startActivity(data);
+                }
+            });
+
 //            //设置TextView背景为半透明
 //            trainer_name.setBackgroundColor(Color.argb(20, 0, 0, 0));
 
@@ -84,7 +97,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         personViewHolder.trainer_name.setText(trainerList.get(i).getTrainer_name());
         personViewHolder.trainer_intro.setText(trainerList.get(i).getTrainer_intro());
-        personViewHolder.trainer_tel.setText("Tel:"+trainerList.get(i).getTrainer_tel());
+        personViewHolder.trainer_tel.setText("Call:"+trainerList.get(i).getTrainer_tel());
+        personViewHolder.trainer_email.setText("Email:"+trainerList.get(i).getTrainer_email());
+
     }
 
     @Override

@@ -115,6 +115,7 @@ public class runFragment extends Fragment {
         String trainer_name = null;
         String trainer_intro = null;
         String trainer_tel = null;
+        String trainer_email = null;
 
         try {
             jsonObject = new JSONObject(jsoninfo);
@@ -125,9 +126,9 @@ public class runFragment extends Fragment {
                 trainer_name = jsonObject1.getString("trainer_name");
                 trainer_intro = jsonObject1.getString("trainer_intro");
                 trainer_tel = jsonObject1.getString("trainer_tel");
-
+                trainer_email = jsonObject1.getString("trainer_email");
                 //添加教练
-                trainerList.add(new Trainer(trainer_name, trainer_image,trainer_intro,trainer_tel));
+                trainerList.add(new Trainer(trainer_name, trainer_image,trainer_intro,trainer_tel,trainer_email));
             }
 
 

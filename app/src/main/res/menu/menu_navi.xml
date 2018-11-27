@@ -20,9 +20,13 @@
                     android:icon="@drawable/ic_schedule"
                     android:title="Schedule" />
                 <item
-                    android:id="@+id/nav_coaches"
-                    android:icon="@drawable/ic_coaches"
-                    android:title="Coaches" />
+                android:id="@+id/nav_coaches"
+                android:icon="@drawable/ic_coaches"
+                android:title="Coaches" />
+                <item
+                    android:id="@+id/nav_findus"
+                    android:icon="@drawable/icon_findus"
+                    android:title="Find Us" />
 
             </group>
 

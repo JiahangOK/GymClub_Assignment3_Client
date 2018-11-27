@@ -76,6 +76,30 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textIsSelectable">false</item>
     </style>
+    <style name="baseCardTextStyle4" parent="baseLayoutParam">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_toLeftOf">@id/card_share_overflow</item>
+        <item name="android:layout_toRightOf">@id/trainer_image</item>
+        <item name="android:layout_below">@id/trainer_tel</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
+    <style name="baseCardTextStyle5" parent="baseLayoutParam">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_toLeftOf">@id/card_share_overflow</item>
+        <item name="android:layout_toRightOf">@id/trainer_image</item>
+        <item name="android:layout_below">@id/trainer_email</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textIsSelectable">false</item>
+    </style>
 
     <style name="cardQuestionTitleStyle" parent="baseCardTextStyle">
         <item name="android:textSize">17sp</item>
@@ -120,6 +144,20 @@
     <style name="error_style">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#8B0000</item>
+    </style>
+    <style name="Bubble.TextAppearance.Dark" parent="android:TextAppearance.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#ff7f7f7f</item>
+    </style>
+
+    <style name="Bubble.TextAppearance.Light" parent="Bubble.TextAppearance.Dark">
+        <item name="android:textColor">#ffeeeeee</item>
+    </style>
+
+    <style name="ClusterIcon.TextAppearance" parent="android:TextAppearance">
+        <item name="android:textColor">#ffeeeeee</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 </resources>
