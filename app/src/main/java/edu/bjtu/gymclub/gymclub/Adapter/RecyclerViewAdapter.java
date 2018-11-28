@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView trainer_intro;
         TextView trainer_tel;
         TextView trainer_email;
+        TextView trainer_sms;
 
 
 
@@ -52,6 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             trainer_intro = (TextView) itemView.findViewById(R.id.trainer_intro);
             trainer_tel = (TextView) itemView.findViewById(R.id.trainer_tel);
             trainer_email = (TextView) itemView.findViewById(R.id.trainer_email);
+            trainer_sms = (TextView) itemView.findViewById(R.id.trainer_sms);
 
             trainer_tel.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,9 +74,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 }
             });
 
-//            //设置TextView背景为半透明
-//            trainer_name.setBackgroundColor(Color.argb(20, 0, 0, 0));
-
+            trainer_sms.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+trainer_tel.getText().toString().split(":")[1]));
+                    String message ="hello.";
+                    intent.putExtra("sms_body",message);
+                    itemView.getContext().startActivity(intent);
+                }
+            });
         }
 
 
@@ -97,9 +106,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         personViewHolder.trainer_name.setText(trainerList.get(i).getTrainer_name());
         personViewHolder.trainer_intro.setText(trainerList.get(i).getTrainer_intro());
-        personViewHolder.trainer_tel.setText("Call:"+trainerList.get(i).getTrainer_tel());
-        personViewHolder.trainer_email.setText("Email:"+trainerList.get(i).getTrainer_email());
 
+        personViewHolder.trainer_tel.setText(Html.fromHtml("<u>"+"Call:"+trainerList.get(i).getTrainer_tel()+"</u>"));
+        personViewHolder.trainer_email.setText(Html.fromHtml("<u>"+"Email:"+trainerList.get(i).getTrainer_email()+"</u>"));
+        personViewHolder.trainer_sms.setText(Html.fromHtml("<u>"+"SMS:"+trainerList.get(i).getTrainer_tel()+"</u>"));
     }
 
     @Override

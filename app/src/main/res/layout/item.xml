@@ -36,14 +36,20 @@
             android:id="@+id/trainer_tel"
             style="@style/baseCardTextStyle3"
             android:textColor="@drawable/textview_selector"
-            android:autoLink="all"
+
             android:clickable="true" />
 
         <TextView
             android:id="@+id/trainer_email"
             style="@style/baseCardTextStyle4"
             android:textColor="@drawable/textview_selector"
-            android:autoLink="all"
+
+            android:clickable="true" />
+        <TextView
+            android:id="@+id/trainer_sms"
+            style="@style/baseCardTextStyle5"
+            android:textColor="@drawable/textview_selector"
+
             android:clickable="true" />
 
 
